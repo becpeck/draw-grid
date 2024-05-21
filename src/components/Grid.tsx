@@ -9,7 +9,13 @@ type GridProps = {
 export default function Grid({grid, toggleCellValue}: GridProps) {
   return (
     <section className="flex h-fit">
-      <div className={twMerge(`grid grid-rows-${grid.length} grid-cols-${grid[0].length} border border-gray-900`)}>
+      <div
+        className={twMerge(`grid border border-gray-900`)}
+        style={{
+          gridTemplateRows: `repeat(${grid.length}, minmax(0, 1fr))`,
+          gridTemplateColumns: `repeat(${grid[0].length}, minmax(0, 1fr))`,
+        }}
+      >
         {grid.map((row, r) => (
           row.map((value, c) => (
             <GridCell

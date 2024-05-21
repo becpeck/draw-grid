@@ -1,9 +1,8 @@
 type ArrayOutputProps = {
   grid: number[][];
-  clearGrid: () => void;
 };
 
-export default function ArrayOutput({ grid, clearGrid }: ArrayOutputProps) {
+export default function ArrayOutput({ grid }: ArrayOutputProps) {
 
   const outputContents = `[${grid.map(row => `[${row.join(", ")}]`).join(",\n ")}]`;
 
